@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FabulousXF.SaveState", "src\FabulousXF.SaveState.fsproj", "{277095B4-B8AD-4CEB-9741-F63D78EBC6D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{5773FD00-E3F5-4C69-AAE4-8E52C219FDBF}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "StateSaveSample", "samples\StateSaveSample\StateSaveSample\StateSaveSample.fsproj", "{CDADB894-32A5-4186-8E0E-BAA89328B1E1}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "StateSaveSample.Android", "samples\StateSaveSample\StateSaveSample.Android\StateSaveSample.Android.fsproj", "{56F29348-6CCB-406B-AD73-F17141813EEF}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "StateSaveSample.iOS", "samples\StateSaveSample\StateSaveSample.iOS\StateSaveSample.iOS.fsproj", "{8A235919-6EC5-4A37-9B81-CA6981CA1A46}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{277095B4-B8AD-4CEB-9741-F63D78EBC6D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{277095B4-B8AD-4CEB-9741-F63D78EBC6D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{277095B4-B8AD-4CEB-9741-F63D78EBC6D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{277095B4-B8AD-4CEB-9741-F63D78EBC6D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDADB894-32A5-4186-8E0E-BAA89328B1E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDADB894-32A5-4186-8E0E-BAA89328B1E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDADB894-32A5-4186-8E0E-BAA89328B1E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDADB894-32A5-4186-8E0E-BAA89328B1E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56F29348-6CCB-406B-AD73-F17141813EEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56F29348-6CCB-406B-AD73-F17141813EEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56F29348-6CCB-406B-AD73-F17141813EEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56F29348-6CCB-406B-AD73-F17141813EEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A235919-6EC5-4A37-9B81-CA6981CA1A46}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{8A235919-6EC5-4A37-9B81-CA6981CA1A46}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{8A235919-6EC5-4A37-9B81-CA6981CA1A46}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{8A235919-6EC5-4A37-9B81-CA6981CA1A46}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{8A235919-6EC5-4A37-9B81-CA6981CA1A46}.Debug|Any CPU.Deploy.0 = Debug|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CDADB894-32A5-4186-8E0E-BAA89328B1E1} = {5773FD00-E3F5-4C69-AAE4-8E52C219FDBF}
+		{56F29348-6CCB-406B-AD73-F17141813EEF} = {5773FD00-E3F5-4C69-AAE4-8E52C219FDBF}
+		{8A235919-6EC5-4A37-9B81-CA6981CA1A46} = {5773FD00-E3F5-4C69-AAE4-8E52C219FDBF}
+	EndGlobalSection
+EndGlobal
