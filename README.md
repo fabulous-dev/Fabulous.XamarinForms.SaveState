@@ -1,0 +1,1 @@
+Fabulous.XamarinForms extension to reload the previous state of the app on start and resume
