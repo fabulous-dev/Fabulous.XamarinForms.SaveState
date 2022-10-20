@@ -15,6 +15,6 @@
       <Compile Include="App.fs" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\..\..\src\FabulousXF.SaveState.fsproj" />
+      <ProjectReference Include="..\..\..\src\Fabulous.XamarinForms.SaveState.fsproj" />
     </ItemGroup>
 </Project>
