@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FabulousXF.SaveState", "src\FabulousXF.SaveState.fsproj", "{277095B4-B8AD-4CEB-9741-F63D78EBC6D0}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Fabulous.XamarinForms.SaveState", "src\Fabulous.XamarinForms.SaveState.fsproj", "{277095B4-B8AD-4CEB-9741-F63D78EBC6D0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{5773FD00-E3F5-4C69-AAE4-8E52C219FDBF}"
 EndProject

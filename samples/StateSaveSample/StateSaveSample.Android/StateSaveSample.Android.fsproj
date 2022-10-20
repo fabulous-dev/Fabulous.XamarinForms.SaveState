@@ -62,9 +62,9 @@
         <Compile Include="MainActivity.fs" />
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="..\..\..\src\FabulousXF.SaveState.fsproj">
+        <ProjectReference Include="..\..\..\src\Fabulous.XamarinForms.SaveState.fsproj">
           <Project>{277095b4-b8ad-4ceb-9741-f63d78ebc6d0}</Project>
-          <Name>FabulousXF.SaveState</Name>
+          <Name>Fabulous.XamarinForms.SaveState</Name>
         </ProjectReference>
         <ProjectReference Include="..\StateSaveSample\StateSaveSample.fsproj">
             <Project>{56A675AA-0E77-4CCB-8E08-72BD6066D124}</Project>
@@ -87,7 +87,7 @@
         <PackageReference Include="Xamarin.CommunityToolkit" Version="1.3.2" />
         <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
         <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
-        <PackageReference Include="Fabulous.XamarinForms" Version="2.0.9" />
+        <PackageReference Include="Fabulous.XamarinForms" Version="2.0.10" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.FSharp.targets" />
 </Project>

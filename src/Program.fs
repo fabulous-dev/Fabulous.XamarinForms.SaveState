@@ -16,7 +16,7 @@ module Program =
         | ModelSavingError of exn
         | PreviousModelLoaded of 'model
     
-    let private saveModelCmd (encode: 'model -> string) (model: 'model): Cmd<SaveStateMsg<'msg, 'model>> =
+    let saveModelCmd (encode: 'model -> string) (model: 'model): Cmd<SaveStateMsg<'msg, 'model>> =
         Cmd.ofSub (fun dispatch ->
             try
                 let json = encode model
@@ -25,14 +25,15 @@ module Program =
             | ex -> dispatch (ModelSavingError ex)
         )
             
-    let private loadModelCmd<'msg, 'model> (decode: string -> 'model): Cmd<SaveStateMsg<'msg, 'model>> =
-        Cmd.ofMsgOption(
-            if Application.Current.Properties.ContainsKey(AppStateKey) then
-                let json = Application.Current.Properties.[AppStateKey] :?> string
-                let model = decode json
-                Some (PreviousModelLoaded model)
-            else
-                None
+    let loadModelCmd<'msg, 'model> (decode: string -> 'model): Cmd<SaveStateMsg<'msg, 'model>> =
+        Cmd.ofSub (fun dispatch ->
+            try
+                if Application.Current.Properties.ContainsKey(AppStateKey) then
+                    let json = Application.Current.Properties.[AppStateKey] :?> string
+                    let model = decode json
+                    dispatch (PreviousModelLoaded model)
+            with
+            | ex -> dispatch (ModelSavingError ex)
         )
         
     let withStateSave
@@ -43,7 +44,7 @@ module Program =
     
         let init args =
             let m, c = program.Init(args)
-            m, Cmd.batch [ Cmd.ofMsg LoadPreviousModel; Cmd.map AppMsg c ]
+            m, Cmd.map AppMsg c
             
         let update (msg, model) =
             match msg with
