@@ -34,4 +34,4 @@ let program =
     |> Program.withSaveState encodeAppState decodeAppState StateSaveFailure
 ```
 
-<img src="docs/save-state.gif" height="500">
+<img src="docs/save-state.gif">
