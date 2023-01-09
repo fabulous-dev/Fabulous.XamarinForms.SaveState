@@ -80,4 +80,5 @@ module Program =
           View = view
           CanReuseView = program.CanReuseView
           SyncAction = program.SyncAction
-          Logger = program.Logger }
+          Logger = program.Logger
+          ExceptionHandler  = program.ExceptionHandler }
