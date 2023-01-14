@@ -6,7 +6,7 @@
         <PackageReadmeFile>PackageREADME.md</PackageReadmeFile>
         <PackageIcon>nuget-icon.png</PackageIcon>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-        <VersionPrefix>2.0.0</VersionPrefix>
+        <VersionPrefix>2.1.3</VersionPrefix>
         <RepositoryUrl>https://github.com/fsharp-mobile/Fabulous.XamarinForms.SaveState</RepositoryUrl>
         <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
         <RootNamespace>Fabulous.XamarinForms.SaveState</RootNamespace>
@@ -19,7 +19,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Fabulous.XamarinForms" Version="2.0.10" />
+      <PackageReference Include="Fabulous.XamarinForms" Version="2.1.3" />
     </ItemGroup>
 
 </Project>
