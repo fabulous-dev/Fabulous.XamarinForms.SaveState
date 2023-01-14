@@ -1,20 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
-        <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
-        <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
-    </PropertyGroup>
-    <ItemGroup>
-        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
-        <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
-        <PackageReference Include="FSharp.Core" Version="6.0.1" />
-        <PackageReference Include="Fabulous.XamarinForms" Version="2.0.10" />
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    </ItemGroup>
-    <ItemGroup>
-      <Compile Include="App.fs" />
-    </ItemGroup>
-    <ItemGroup>
-      <ProjectReference Include="..\..\..\src\Fabulous.XamarinForms.SaveState.fsproj" />
-    </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" />
+    <PackageReference Include="Xamarin.Essentials" />
+    <PackageReference Include="FSharp.Core" />
+    <PackageReference Include="Fabulous.XamarinForms" />
+    <PackageReference Include="Newtonsoft.Json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Fabulous.XamarinForms.SaveState.fsproj" />
+  </ItemGroup>
 </Project>

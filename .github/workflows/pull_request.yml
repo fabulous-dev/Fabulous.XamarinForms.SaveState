@@ -1,17 +1,20 @@
 name: Pull Request
 on: pull_request
 
+env:
+  SLN_FILE: Fabulous.XamarinForms.SaveState.NoSamples.sln
+  CONFIG: Release
+
 jobs:
-  build:
-    runs-on: macos-latest
-    env:
-      SLN_FILE: NoSamples.sln
+  pull_request:
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout sources
+      uses: actions/checkout@v3
     - name: Setup .NET
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 6.0.401
+        dotnet-version: 7.0.x
     - name: Check code formatting
       run: |
         dotnet tool restore
@@ -19,6 +22,6 @@ jobs:
     - name: Restore
       run: dotnet restore ${SLN_FILE}
     - name: Build
-      run: dotnet build --no-restore --configuration Release ${SLN_FILE}
+      run: dotnet build ${SLN_FILE} -c ${CONFIG} --no-restore
     - name: Test
-      run: dotnet test --no-build --configuration Release ${SLN_FILE}
+      run: dotnet test ${SLN_FILE} -c ${CONFIG} --no-build
