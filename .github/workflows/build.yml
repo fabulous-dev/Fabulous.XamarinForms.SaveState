@@ -7,7 +7,7 @@ on:
 permissions: write-all
 
 env:
-  VERSION: 2.1.3
+  VERSION: 2.1.0
   CONFIG: Release
   SLN_FILE: Fabulous.XamarinForms.SaveState.NoSamples.sln
 
