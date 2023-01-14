@@ -12,7 +12,7 @@ _No unreleased changes_
 ## [2.1.0] - 2023-01-14
 
 ### Changed
-- Updated dependency on Fabulous.XamarinForms to [2.1.0, 2.2.0) to ensure SaveState can only be used with a binary-compatible version
+- Updated dependency on Fabulous.XamarinForms to limit between 2.1.0 to 2.2.0 to ensure SaveState can only be used with a binary-compatible version
 
 [unreleased]: https://github.com/fabulous-dev/Fabulous.XamarinForms.SaveState/compare/2.1.0...HEAD
 [2.1.0]: https://github.com/fabulous-dev/Fabulous.XamarinForms.SaveState/releases/tag/2.1.0
