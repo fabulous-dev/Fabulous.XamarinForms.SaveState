@@ -18,8 +18,7 @@ open Xamarin.Forms.Platform.Android
            Icon = "@drawable/icon",
            Theme = "@style/MainTheme",
            MainLauncher = true,
-           ConfigurationChanges = (ConfigChanges.ScreenSize
-                                   ||| ConfigChanges.Orientation))>]
+           ConfigurationChanges = (ConfigChanges.ScreenSize ||| ConfigChanges.Orientation))>]
 type MainActivity() =
     inherit FormsAppCompatActivity()
 
@@ -37,8 +36,8 @@ type MainActivity() =
     override this.OnRequestPermissionsResult
         (
             requestCode: int,
-            permissions: string [],
-            [<GeneratedEnum>] grantResults: Android.Content.PM.Permission []
+            permissions: string[],
+            [<GeneratedEnum>] grantResults: Android.Content.PM.Permission[]
         ) =
         Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults)
         base.OnRequestPermissionsResult(requestCode, permissions, grantResults)

@@ -8,18 +8,14 @@ open Fabulous.XamarinForms.SaveState
 open type View
 
 module App =
-    type Model =
-        { Count: int
-          Failure: string option }
+    type Model = { Count: int; Failure: string option }
 
     type Msg =
         | StateSaveFailure of exn
         | Increment
         | Decrement
 
-    let init () =
-        { Count = 0
-          Failure = None }
+    let init () = { Count = 0; Failure = None }
 
     let update msg model =
         match msg with
@@ -34,20 +30,19 @@ module App =
                 VStack() {
                     Label("Hello from Fabulous v2!")
                         .font(namedSize = NamedSize.Title)
-                        .centerTextHorizontal()
-                        
+                        .centerTextHorizontal ()
+
                     match model.Failure with
                     | None -> ()
                     | Some failure -> Label(failure)
 
                     (VStack() {
-                        Label($"Count is {model.Count}")
-                            .centerTextHorizontal()
+                        Label($"Count is {model.Count}").centerTextHorizontal ()
 
                         Button("Increment", Increment)
                         Button("Decrement", Decrement)
-                     })
-                        .centerVertical(expand = true)
+                    })
+                        .centerVertical (expand = true)
                 }
             )
         )
@@ -55,4 +50,3 @@ module App =
     let program =
         Program.stateful init update view
         |> Program.withStateSave JsonConvert.SerializeObject JsonConvert.DeserializeObject<Model> StateSaveFailure
-            
