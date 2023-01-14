@@ -1,25 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-    <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <PackageReadmeFile>PackageREADME.md</PackageReadmeFile>
-        <PackageIcon>nuget-icon.png</PackageIcon>
-        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-        <VersionPrefix>2.1.3</VersionPrefix>
-        <RepositoryUrl>https://github.com/fsharp-mobile/Fabulous.XamarinForms.SaveState</RepositoryUrl>
-        <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
-        <RootNamespace>Fabulous.XamarinForms.SaveState</RootNamespace>
-    </PropertyGroup>
-
-    <ItemGroup>
-        <None Include="PackageREADME.md" Pack="true" PackagePath="\" />
-        <None Include="../logo/nuget-icon.png" Pack="true" PackagePath="\" />
-        <Compile Include="Program.fs" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="Fabulous.XamarinForms" Version="2.1.3" />
-    </ItemGroup>
-
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <PackageId>Fabulous.XamarinForms.SaveState</PackageId>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+  <!-- NuGet Package -->
+  <PropertyGroup>
+    <Description>Extension for Fabulous.XamarinForms to reload the previous state of the app on start and resume</Description>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+  <PropertyGroup Condition="$(GITHUB_ACTIONS) == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+    <None Include="../logo/nuget-icon.png" Pack="true" PackagePath="\" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FSharp.Core" VersionOverride="7.0.0" PrivateAssets="All" />
+    <PackageReference Include="Fabulous.XamarinForms" VersionOverride="[2.1.0, 2.2.0)" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
+  </ItemGroup>
 </Project>

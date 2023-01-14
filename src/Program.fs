@@ -18,29 +18,24 @@ module Program =
         | PreviousModelLoaded of 'model
 
     let saveModelCmd (encode: 'model -> string) (model: 'model) : Cmd<SaveStateMsg<'msg, 'model>> =
-        Cmd.ofSub (fun dispatch ->
+        Cmd.ofSub(fun dispatch ->
             try
                 let json = encode model
                 Application.Current.Properties.[AppStateKey] <- json
             with ex ->
-                dispatch (ModelSavingError ex))
+                dispatch(ModelSavingError ex))
 
     let loadModelCmd<'msg, 'model> (decode: string -> 'model) : Cmd<SaveStateMsg<'msg, 'model>> =
-        Cmd.ofSub (fun dispatch ->
+        Cmd.ofSub(fun dispatch ->
             try
                 if Application.Current.Properties.ContainsKey(AppStateKey) then
                     let json = Application.Current.Properties.[AppStateKey] :?> string
                     let model = decode json
-                    dispatch (PreviousModelLoaded model)
+                    dispatch(PreviousModelLoaded model)
             with ex ->
-                dispatch (ModelSavingError ex))
+                dispatch(ModelSavingError ex))
 
-    let withStateSave
-        (encode: 'model -> string)
-        (decode: string -> 'model)
-        (failure: exn -> 'msg)
-        (program: Program<'arg, 'model, 'msg, IApplication>)
-        =
+    let withStateSave (encode: 'model -> string) (decode: string -> 'model) (failure: exn -> 'msg) (program: Program<'arg, 'model, 'msg, IApplication>) =
 
         let init args =
             let m, c = program.Init(args)
@@ -56,7 +51,7 @@ module Program =
 
             | LoadPreviousModel -> model, loadModelCmd decode
 
-            | ModelSavingError ex -> model, Cmd.ofMsg (AppMsg(failure ex))
+            | ModelSavingError ex -> model, Cmd.ofMsg(AppMsg(failure ex))
 
             | PreviousModelLoaded prevModel -> prevModel, Cmd.none
 
@@ -64,7 +59,7 @@ module Program =
             (View.map AppMsg (program.View(model)))
                 .onStart(LoadPreviousModel)
                 .onResume(LoadPreviousModel)
-                .onSleep (SaveCurrentModel)
+                .onSleep(SaveCurrentModel)
 
         let subscribe (model: 'model) =
             let c = program.Subscribe(model)

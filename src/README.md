@@ -1,6 +1,4 @@
-# Fabulous.XamarinForms.SaveState
-
-[![build](https://img.shields.io/github/actions/workflow/status/fabulous-dev/Fabulous.XamarinForms.SaveState/build.yml?branch=main)](https://github.com/fabulous-dev/Fabulous.XamarinForms.SaveState/actions/workflows/build.yml) [![NuGet version](https://img.shields.io/nuget/v/Fabulous.XamarinForms.SaveState)](https://www.nuget.org/packages/Fabulous.XamarinForms.SaveState) [![NuGet downloads](https://img.shields.io/nuget/dt/Fabulous.XamarinForms.SaveState)](https://www.nuget.org/packages/Fabulous.XamarinForms.SaveState) [![Discord](https://img.shields.io/discord/716980335593914419?label=discord&logo=discord)](https://discord.gg/bpTJMbSSYK) [![Twitter Follow](https://img.shields.io/twitter/follow/FabulousAppDev?style=social)](https://twitter.com/FabulousAppDev)
+# Save state extension for Fabulous.XamarinForms
 
 Add the save state feature to your Fabulous.XamarinForms app.  
 This package will automatically save the current state of your app when it is suspended and restore it when it is resumed.
@@ -34,5 +32,3 @@ let program =
     Program.stateful init update view
     |> Program.withSaveState encodeAppState decodeAppState StateSaveFailure
 ```
-
-<img src="docs/save-state.gif">

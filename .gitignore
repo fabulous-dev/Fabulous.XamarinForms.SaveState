@@ -476,5 +476,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-.idea/
+.idea
+
 Resource.designer.cs
+nupkgs/

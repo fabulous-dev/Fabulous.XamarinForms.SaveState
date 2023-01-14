@@ -30,19 +30,19 @@ module App =
                 VStack() {
                     Label("Hello from Fabulous v2!")
                         .font(namedSize = NamedSize.Title)
-                        .centerTextHorizontal ()
+                        .centerTextHorizontal()
 
                     match model.Failure with
                     | None -> ()
                     | Some failure -> Label(failure)
 
                     (VStack() {
-                        Label($"Count is {model.Count}").centerTextHorizontal ()
+                        Label($"Count is {model.Count}").centerTextHorizontal()
 
                         Button("Increment", Increment)
                         Button("Decrement", Decrement)
                     })
-                        .centerVertical (expand = true)
+                        .centerVertical(expand = true)
                 }
             )
         )
